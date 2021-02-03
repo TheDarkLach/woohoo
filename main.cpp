@@ -10,7 +10,7 @@ int main()
     object.add(14);
 
 
-
+    object.Search(object.getRoot(), 14);
     object.display();	//displays again after!
    
     return 0;

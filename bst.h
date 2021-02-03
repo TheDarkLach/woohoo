@@ -25,6 +25,12 @@ class bst
 /* ************** PLACE YOUR PROTOTYPE HERE ***************** */
  
         void add(int num);
+        void Search(node* root, int data);
+
+        node* getRoot()
+        {
+            return root;
+        }
  	private:
  		node * root;
 		void display_tree(node*, int);
