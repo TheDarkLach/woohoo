@@ -7,11 +7,11 @@ int main()
     object.display();	//displays a BST
 
     /*  PLACE YOUR FUNCTION CALL HERE */
-    object.add(object.getRoot(), 55);
+    //object.add(object.getRoot(), 14);
     
 
-    object.Search(object.getRoot(), 55);
-    object.deletee(object.getRoot(),55);
+    object.Search(object.getRoot(), 20);
+    object.deletee(object.getRoot(),20);
     object.display();	//displays again after!
    
     return 0;
