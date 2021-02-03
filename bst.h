@@ -24,7 +24,7 @@ class bst
 
 /* ************** PLACE YOUR PROTOTYPE HERE ***************** */
  
- 
+        void add(int num);
  	private:
  		node * root;
 		void display_tree(node*, int);

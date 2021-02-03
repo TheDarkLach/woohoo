@@ -65,3 +65,9 @@ void bst::display() {
   display_tree(root, 0);
   cout << "--------------------------------" << endl;
 }
+
+void bst::add(int num)
+{
+  
+}
+
