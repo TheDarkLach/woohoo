@@ -24,9 +24,8 @@ class bst
 
 /* ************** PLACE YOUR PROTOTYPE HERE ***************** */
  
-        void add(node* root, int num);
+        void add(node* curr_node, int num);
         void Search(node* root, int data);
-        node* insert(node* root, int data);
 
         node* getRoot()
         {

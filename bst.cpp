@@ -66,11 +66,41 @@ void bst::display() {
   cout << "--------------------------------" << endl;
 }
 
-void bst::add(node* root,int num)
+void bst::add(node* curr_node, int num)
 {
-  
-}
+	if(num > curr_node->data)
+	{
+		if(curr_node->right == NULL) //Check if avaliable to insert
+		{
+			node* temp = new node();
+			temp->data = num;
 
+			curr_node->right = temp;
+
+			return; //Inserted
+		}
+		else //If not avaliable to insert, go to the right node
+		{
+			add(curr_node->right, num);
+		}
+	}
+	else
+	{
+		if(curr_node->left == NULL) //Check if avaliable to insert
+		{
+			node* temp = new node();
+			temp->data = num;
+
+			curr_node->left = temp;
+
+			return; //Inserted
+		}
+		else //If not avaliable to insert, go to the right node
+		{
+			add(curr_node->left, num);
+		}
+	}
+}
 
 void bst::Search(node* root, int data)
 {
