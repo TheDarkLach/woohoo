@@ -66,7 +66,7 @@ void bst::display() {
   cout << "--------------------------------" << endl;
 }
 
-void bst::add(int num)
+void bst::add(node* root,int num)
 {
   
 }
@@ -75,10 +75,10 @@ void bst::add(int num)
 void bst::Search(node* root, int data)
 {
   if(root == NULL){    //If root is Null return false, as there is no element in tree
-    cout << "does not contain" << data;
+    cout << "does not contain" << data << endl;
   }
-  else if(data = root->data){ // If root data is equal to the searched data, then return true
-    cout << "contains " << data;
+  else if(data == root->data){ // If root data is equal to the searched data, then return true
+    cout << "contains " << data << endl;
   }
   else if(data <= root->data){ //If the searched data is less than or equal to root data, recursively search in left tree
     Search(root->left,data);    
