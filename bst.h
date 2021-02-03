@@ -26,6 +26,7 @@ class bst
  
         void add(node* curr_node, int num);
         void Search(node* root, int data);
+        node* deletee(node* root, int data);
 
         node* getRoot()
         {

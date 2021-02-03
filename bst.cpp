@@ -66,6 +66,54 @@ void bst::display() {
   cout << "--------------------------------" << endl;
 }
 
+int FindMin(node *root) {
+   if (root == NULL) {
+      return 0; // or undefined.
+   }
+   if (root->left != NULL) {
+      return FindMin(root->left); // left tree is smaller
+   }
+   return root->data;
+}
+
+node* bst::deletee(node* root, int data)
+{
+   if (root == NULL) {
+     return root;
+  }
+  if (data < root->data) {  // data is in the left sub tree.
+      root->left = deletee(root->left, data);
+  } else if (data > root->data) { // data is in the right sub tree.
+      root->right = deletee(root->right, data);
+  } else {
+     // case 1: no children
+     if (root->left == NULL && root->right == NULL) {
+        delete(root); // wipe out the memory, in C, use free function
+        root = NULL;
+     }
+     // case 2: one child (right)
+     else if (root->left == NULL) {
+        node *temp = root; // save current node as a backup
+        root = root->right;
+        delete temp;
+     }
+     // case 3: one child (left)
+     else if (root->right == NULL) {
+        node *temp = root; // save current node as a backup
+        root = root->left;
+        delete temp;
+     }
+     // case 4: two children
+     /*else {
+        node *temp = FindMin(root->right); // find minimal value of right sub tree
+        root->data = temp->data; // duplicate the node
+        root->right = deletee(root->right, temp->data); // delete the duplicate node
+     }*/
+  }
+  return root; // parent node can update reference
+
+}
+
 void bst::add(node* curr_node, int num)
 {
 	if(num > curr_node->data)

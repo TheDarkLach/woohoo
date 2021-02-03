@@ -11,6 +11,7 @@ int main()
     
 
     object.Search(object.getRoot(), 55);
+    object.deletee(object.getRoot(),55);
     object.display();	//displays again after!
    
     return 0;
